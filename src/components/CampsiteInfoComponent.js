@@ -12,6 +12,7 @@ class CommentForm extends React.Component {
         super(props);
         this.state = {
             isModalOpen: false
+           
         }
         this.toggleModal = this.toggleModal.bind(this);
         this.handleValues = this.handleValues.bind(this);
@@ -39,6 +40,7 @@ class CommentForm extends React.Component {
                                 <Label>Rating</Label>
                                 <Control.select model=".rating" name="rating"
                                     className="form-control">
+                                    <option>Select Rating</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
