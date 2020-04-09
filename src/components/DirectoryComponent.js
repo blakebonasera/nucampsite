@@ -12,7 +12,7 @@ function RenderDirectoryItem({campsite}) {
                 </CardImgOverlay>
             </Link>
         </Card>
-    )
+    );
 }
 
 function Directory(props) {
@@ -27,20 +27,20 @@ function Directory(props) {
 
     return (
         <div className="container">
-        <div className="row">
-            <div className="col">
-                <Breadcrumb>
-                    <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                    <BreadcrumbItem active>Directory</BreadcrumbItem>
-                </Breadcrumb>
-                <h2>Directory</h2>
-                <hr />
+            <div className="row">
+                <div className="col">
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>Directory</BreadcrumbItem>
+                    </Breadcrumb>
+                    <h2>Directory</h2>
+                    <hr />
+                </div>
+            </div>
+            <div className="row">
+                {directory}
             </div>
         </div>
-        <div className="row">
-            {directory}
-        </div>
-    </div>
     );
 }
 

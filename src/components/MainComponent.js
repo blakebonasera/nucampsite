@@ -1,27 +1,13 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import Directory from './DirectoryComponent';
 import CampsiteInfo from './CampsiteInfoComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import Contact from './ContactComponent';
-import { CAMPSITES } from '../shared/campsites';
-import { COMMENTS } from '../shared/comments';
-import { PARTNERS } from '../shared/partners';
-import { PROMOTIONS } from '../shared/promotions';
 import About from './AboutComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-<<<<<<< HEAD
-import { addComment, fetchCampsites } from '../redux/ActionCreators';
-<<<<<<< HEAD
-import { actions } from 'react-redux-form';
-=======
-import { addComment } from '../redux/ActionCreators';
->>>>>>> parent of 31792158... Redux THUNK
-=======
->>>>>>> parent of 82823151... React Redux Forms Revisitited
 
 const mapStateToProps = state => {
     return {
@@ -32,35 +18,9 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = {
-<<<<<<< HEAD
-    addComment: (campsiteId, rating, author, text) => (addComment(campsiteId, rating, author, text)),
-<<<<<<< HEAD
-    fetchCampsites: () => (fetchCampsites()),
-    resetFeedbackForm: () => (actions.reset('feedbackForm'))
-=======
-    addComment: (campsiteId, rating, author, text) => (addComment(campsiteId, rating, author, text))
->>>>>>> parent of 31792158... Redux THUNK
-=======
-    fetchCampsites: () => (fetchCampsites())
->>>>>>> parent of 82823151... React Redux Forms Revisitited
-};
-
-
 class Main extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            campsites: CAMPSITES,
-            comments: COMMENTS,
-            partners: PARTNERS,
-            promotions: PROMOTIONS
-        };
-    }
-
     render() {
-
         const HomePage = () => {
             return (
                 <Home
@@ -73,11 +33,8 @@ class Main extends Component {
 
         const CampsiteWithId = ({match}) => {
             return (
-                <CampsiteInfo 
-                    campsite={this.props.campsites.filter(campsite => campsite.id === +match.params.campsiteId)[0]} 
-                    comments={this.props.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)}
-                    addComment={this.props.addComment}
-                />
+                <CampsiteInfo campsite={this.props.campsites.filter(campsite => campsite.id === +match.params.campsiteId)[0]} 
+                  comments={this.props.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)} />
             );
         };
 
@@ -98,4 +55,4 @@ class Main extends Component {
     }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+export default withRouter(connect(mapStateToProps)(Main));
