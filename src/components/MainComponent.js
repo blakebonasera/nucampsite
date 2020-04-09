@@ -15,10 +15,13 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 <<<<<<< HEAD
 import { addComment, fetchCampsites } from '../redux/ActionCreators';
+<<<<<<< HEAD
 import { actions } from 'react-redux-form';
 =======
 import { addComment } from '../redux/ActionCreators';
 >>>>>>> parent of 31792158... Redux THUNK
+=======
+>>>>>>> parent of 82823151... React Redux Forms Revisitited
 
 const mapStateToProps = state => {
     return {
@@ -32,11 +35,15 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
 <<<<<<< HEAD
     addComment: (campsiteId, rating, author, text) => (addComment(campsiteId, rating, author, text)),
+<<<<<<< HEAD
     fetchCampsites: () => (fetchCampsites()),
     resetFeedbackForm: () => (actions.reset('feedbackForm'))
 =======
     addComment: (campsiteId, rating, author, text) => (addComment(campsiteId, rating, author, text))
 >>>>>>> parent of 31792158... Redux THUNK
+=======
+    fetchCampsites: () => (fetchCampsites())
+>>>>>>> parent of 82823151... React Redux Forms Revisitited
 };
 
 
@@ -81,7 +88,7 @@ class Main extends Component {
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/directory' render={() => <Directory campsites={this.props.campsites} />} />
                     <Route path='/directory/:campsiteId' component={CampsiteWithId} />
-                    <Route exact path='/contactus' render={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} /> } />
+                    <Route exact path='/contactus' component={Contact} />
                     <Route exact path='/aboutus' render={() => <About partners={this.props.partners} /> } />
                     <Redirect to='/home' />
                 </Switch>
